@@ -155,7 +155,7 @@ open64(const char *pathname_,
   LOAD_FUNC(open64);
 
   mode = 0;
-  if(flags_ & O_CREAT)
+  if(flags_ & (O_CREAT|O_TMPFILE))
     {
       va_list args;
       va_start(args,flags_);
