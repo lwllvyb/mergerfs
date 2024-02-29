@@ -119,7 +119,7 @@ open(const char *pathname_,
   if(fd == -1)
     return -1;
 
-  if(flags_ & (O_DIRECTORY|O_PATH))
+  if(flags_ & (O_DIRECTORY|O_PATH|O_TMPFILE))
     return fd;
   rv = fstat(fd,&st);
   if(rv == -1)
