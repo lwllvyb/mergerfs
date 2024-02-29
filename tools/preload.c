@@ -204,7 +204,7 @@ openat(int         dirfd_,
   LOAD_FUNC(openat);
 
   mode = 0;
-  if(flags_ & O_CREAT)
+  if(flags_ & (O_CREAT|O_TMPFILE))
     {
       va_list args;
       va_start(args,flags_);
@@ -253,7 +253,7 @@ openat64(int         dirfd_,
   LOAD_FUNC(openat64);
 
   mode = 0;
-  if(flags_ & O_CREAT)
+  if(flags_ & (O_CREAT|O_TMPFILE))
     {
       va_list args;
       va_start(args,flags_);
